@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://chbkorm5f2nde"]
+
+[node name="Mago" type="Node2D" unique_id=1922509197]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1512778567]
