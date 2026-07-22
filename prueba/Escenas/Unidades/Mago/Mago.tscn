@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvqtyi4dunmo2"]
+
+[ext_resource type="Texture2D" uid="uid://dveu3g5lyqb4u" path="res://Sprites/Mago/MagoLV1-Idle-Frente.png" id="1_5nutf"]
+[ext_resource type="Script" uid="uid://cfa5ys4o5287j" path="res://Escenas/Unidades/Mago/mago.gd" id="1_dumhm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_718ja"]
+atlas = ExtResource("1_5nutf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1xre"]
+atlas = ExtResource("1_5nutf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fw5j"]
+atlas = ExtResource("1_5nutf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oddh"]
+atlas = ExtResource("1_5nutf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqpkw"]
+atlas = ExtResource("1_5nutf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8thsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_718ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1xre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fw5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oddh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqpkw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5q6n"]
+radius = 43.011627
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dumhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8thsd")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w5q6n")
