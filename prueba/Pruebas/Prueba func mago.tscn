@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://s7kot1h5hoi7"]
+
+[ext_resource type="PackedScene" uid="uid://bvqtyi4dunmo2" path="res://Escenas/Unidades/Mago/Mago.tscn" id="1_svqkq"]
+[ext_resource type="PackedScene" uid="uid://bvld2588ug2g6" path="res://Pruebas/Enemigo de prueba.tscn" id="2_23ciw"]
+
+[node name="Mage" instance=ExtResource("1_svqkq")]
+
+[node name="CharacterBody2D" parent="." index="2" instance=ExtResource("2_23ciw")]
+position = Vector2(59, -5)
