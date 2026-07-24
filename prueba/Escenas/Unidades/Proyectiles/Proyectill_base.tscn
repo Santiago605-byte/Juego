@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgbngy4go515h"]
+
+[ext_resource type="Script" uid="uid://bcacb5tog8kf" path="res://Escenas/Unidades/Proyectiles/proyectill_base.gd" id="1_61ir1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0h36"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_61ir1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n0h36")

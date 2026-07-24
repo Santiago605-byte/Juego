@@ -6,7 +6,10 @@ enum State {
 	DEAD
 }
 
+const proyectil_base = preload("res://Escenas/Unidades/Proyectiles/Proyectill_base.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var attack_timer = $attacktimer
+@onready var projectile_spawn = $ProjectileSpawn
 
 #Relacionado al mago si
 var health = 100
@@ -14,14 +17,16 @@ var  damage= 20
 var attack_range = 100
 var attack_speed = 1 
 var state = State.IDLE
+var projectile = proyectil_base.instantiate()
 
 #Relacionado a los enemigos
 var enemies = []
 var current_target = null
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree fo|r the first time.
 func _ready() -> void:
 	animated_sprite.play("Idle")
 	print(state)
+	attack_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,5 +54,9 @@ func update_target():
 func update_state():
 	if current_target == null:
 		state = State.IDLE
-	else:
+	else:	
 		state = "Attacking"
+
+
+func _on_attack_timer_timeout():
+	print("¡El Timer terminó!")
